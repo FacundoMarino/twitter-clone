@@ -9,6 +9,18 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
-  secret: process.env.NEXT_AUTH_SECRET,
+
+  callbacks: {
+    async session({ session, token }) {
+      session.user.tag = session.user.name
+        .split(" ")
+        .join("")
+        .toLocaleLowerCase();
+      session.user.uid = token.sub;
+      return session;
+    },
+  },
+
+  secret: process.env.NEXTAUTH_SECRET,
 };
 export default NextAuth(authOptions);
