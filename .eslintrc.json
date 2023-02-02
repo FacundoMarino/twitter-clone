@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/babel",
+    "./node_modules/standard/eslintrc.json",
+    "next/core-web-vitals"
+  ]
 }
