@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { LeftSide } from "@/components/LeftSide";
 import { useSession } from "next-auth/react";
-import { Login } from "@/components";
+import { LeftSide } from "@/components/LeftSide";
+import { Feed } from "@/components/Feed";
+import { Login } from "@/components/Login";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -18,6 +19,9 @@ export default function Home() {
       </Head>
       <main className="relative max-w-[1400px] mx-auto">
         <LeftSide />
+        <div>
+          <Feed />
+        </div>
       </main>
     </>
   );

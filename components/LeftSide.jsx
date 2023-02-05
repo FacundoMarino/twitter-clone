@@ -1,6 +1,4 @@
-import Image from "next/image";
 import React from "react";
-import Tweet from "../assets/tweet.png";
 import {
   RiHome7Fill,
   RiSearchLine,
@@ -13,8 +11,8 @@ import {
 import { BsThreeDots, BsTwitter } from "react-icons/bs";
 import { CgMoreO } from "react-icons/cg";
 
-import { SidebarLink } from ".";
 import { signOut, useSession } from "next-auth/react";
+import { SidebarLink } from "./SidebarLink";
 
 export const LeftSide = () => {
   const { data } = useSession();
@@ -59,7 +57,3 @@ export const LeftSide = () => {
     </div>
   );
 };
-
-<div className="w-12 h-12 bg-blue-400 rounded-full p-3">
-  <Image src={Tweet} className="h-7 w-7 color-white" alt="twitter" />
-</div>;
