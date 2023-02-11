@@ -19,8 +19,6 @@ export const Feed = () => {
     [db]
   );
 
-  console.log(posts);
-
   return (
     <div className="sm:ml-[81px] xl:ml-[340px] w-[600px] min-h-screen border-r border-gray-400 text-white py-2 ">
       <div className="sticky top-0 bg-black flex justify-between font-medium text-[20px] px-4 py-2 ">
@@ -30,9 +28,9 @@ export const Feed = () => {
 
       <Input />
 
-      {posts.map((post) => {
-        <Post key={post.id} id={post.id} data={post.data} />;
-      })}
+      {posts.map((post) => (
+        <Post key={post.id} id={post.id} post={post.data()} />
+      ))}
     </div>
   );
 };
