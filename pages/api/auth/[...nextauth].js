@@ -9,6 +9,7 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+  secret: process.env.SECRET,
 
   callbacks: {
     async session({ session, token }) {
@@ -20,7 +21,5 @@ export const authOptions = {
       return session;
     },
   },
-
-  secret: process.env.SECRET,
 };
 export default NextAuth(authOptions);
