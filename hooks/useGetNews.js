@@ -1,4 +1,4 @@
-import { getNews } from "@/api/config";
+import { getNews } from "@/api_news/config";
 import { useEffect, useState } from "react";
 
 export const useGetNews = () => {
