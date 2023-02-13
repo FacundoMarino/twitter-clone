@@ -15,7 +15,7 @@ export const Input = () => {
   const [loading, setLoading] = useState(false);
   const [showEmojis, setShowEmojis] = useState(false);
   const [input, setInput] = useState("");
-  const [selectedFile, setSelectedFile] = useState();
+  const [selectedFile, setSelectedFile] = useState(null);
   const { data: session } = useSession();
   const { startPost } = useInput();
 

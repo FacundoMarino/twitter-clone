@@ -11,8 +11,6 @@ export const Trending = () => {
     setResNews(news);
   }, [news]);
 
-  console.log(news);
-
   return (
     <>
       <div className="hidden lg:block w-[350px] mt-2">
@@ -28,7 +26,7 @@ export const Trending = () => {
         <div className="bg-[#16181C] rounded-[20px] text-white mt-4 px-4 py-4">
           <h1 className="text-[20px] font-medium">What's Happening</h1>
 
-          {resNews?.map((item) => (
+          {resNews.map((item) => (
             <TrendingList key={item.published_at} {...item} />
           ))}
         </div>
