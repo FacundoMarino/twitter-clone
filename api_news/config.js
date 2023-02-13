@@ -1,12 +1,16 @@
 export const getNews = async () => {
-  const url = `http://api.mediastack.com/v1/news?access_key=363e270aad04170ab71f5f08a6c51faf&keywords=tech&countries=us,gb,de&limit=5`;
+  let url =
+    "https://newsapi.org/v2/top-headlines?" +
+    "country=us&" +
+    `pageSize=${5}&` +
+    "apiKey=3ba1e4999fd94b5983cd5c34e271f6bc";
   const resp = await fetch(url);
-  const { data } = await resp.json();
+  const { articles } = await resp.json();
 
-  const news = data.map((item) => ({
+  const news = articles?.map((item) => ({
     author: item.author,
     title: item.title,
-    published_at: item.published_at,
+    id: item.source.id,
   }));
 
   return news;

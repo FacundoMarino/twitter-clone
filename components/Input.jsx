@@ -95,10 +95,6 @@ export const Input = () => {
           {!loading && (
             <div className="flex justify-between items-center">
               <div className="flex gap-4 text-[20px] text-[#1d9bf0] ">
-                <label htmlFor="file">
-                  <BsImage className="cursor-pointer " />
-                </label>
-                <input type="file" id="file" hidden onChange={addImagetoPost} />
                 <div className="border-[#1d96f0] border rounded h-[18px] text-[16px] grid place-items-center ">
                   <AiOutlineGif />
                 </div>
